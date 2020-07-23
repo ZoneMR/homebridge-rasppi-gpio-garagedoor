@@ -2,13 +2,13 @@
  * Created by kraig on 7/2/16.
  */
 
-import DoorSensorPort from "./DoorSensorPort";
+import {DoorSensorPort} from "./DoorSensorPort";
 import {GPIOPort, GPIOState} from "./GPIOPort";
 import {asDoorState, asOperationState, getCurrentDoorState} from "./DoorStateExtension";
 
 var Characteristic;
 
-export default class SwitchPort extends GPIOPort {
+export class SwitchPort extends GPIOPort {
 	private isOperating: boolean;
 	private service;
 	private log;
@@ -18,7 +18,7 @@ export default class SwitchPort extends GPIOPort {
 	}
 
 	constructor(pin, service, log, doorSensor: DoorSensorPort, doorOpensInSeconds) {
-		super(pin, 'out');
+		super(pin, 'high');
 		this.service = service;
 		this.log = log;
 		this.isOperating = false;

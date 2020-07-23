@@ -21,13 +21,13 @@
     "homebridge": ">=0.2.5"
   },
   "dependencies": {
-    "bluebird": "^3.3.4",
-    "onoff" : "1.1.0"
+    "bluebird": "^3.7.2",
+    "onoff": "^4.1.2"
   },
   "devDependencies": {
     "typescript": "^1.8"
   },
   "scripts": {
-    "prepublish": "node node_modules/typescript/bin/tsc --module commonjs index.ts -t ES5"
+    "prepublish": "node node_modules/typescript/bin/tsc --module commonjs index.ts -t ES6"
   }
 }

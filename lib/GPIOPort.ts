@@ -2,9 +2,6 @@
  * Created by kraig on 7/2/16.
  */
 
-/// <reference path="../typings/globals/onoff/index.d.ts" />
-/// <reference path="../typings/modules/bluebird/index.d.ts" />
-
 import util = require("util");
 import Promise = require("bluebird");
 import onoff = require("onoff");
@@ -14,8 +11,8 @@ var gpioReadAsync = Promise.promisify(Gpio.prototype.read);
 var gpioWriteAsync = Promise.promisify(Gpio.prototype.write);
 
 export enum GPIOState {
-	On = 1,
-	Off = 0,
+	On = 0,
+	Off = 1,
 }
 
 export type GPIODirection =
